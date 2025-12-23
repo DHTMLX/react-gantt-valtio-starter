@@ -1,6 +1,11 @@
 # DHTMLX React Gantt Valtio Demo
 
-This project demonstrates how to integrate the DHTMLX React Gantt component with Valtio for state management in a React application. The integration enables centralized control of Gantt chart data, tasks, and links, providing predictable updates and smooth UI interactions through a proxy-based state management approach. The setup uses React 19+ and Vite, with full TypeScript support for enhanced code quality and maintainability.
+This project demonstrates how to integrate the DHTMLX React Gantt component with Valtio for state management in a React application. 
+
+The setup uses React 19+ and Vite, with full TypeScript support.
+
+**Related tutorial**:
+[https://docs.dhtmlx.com/gantt/integrations/react/state/valtio/](https://docs.dhtmlx.com/gantt/integrations/react/state/valtio/)
 
 ## Features:
 
