@@ -4,22 +4,32 @@ import UndoIcon from '@mui/icons-material/Undo';
 import RedoIcon from '@mui/icons-material/Redo';
 import Button from '@mui/material/Button';
 import type { ZoomLevel } from '../seed/Seed';
+import './Toolbar.css';
 
 export interface ToolbarProps {
   onUndo?: () => void;
   onRedo?: () => void;
   onZoom?: (level: ZoomLevel) => void;
   currentZoom?: ZoomLevel;
+  canUndo?: boolean;
+  canRedo?: boolean;
 }
 
-export default function Toolbar({ onUndo, onRedo, onZoom, currentZoom = 'month' }: ToolbarProps) {
+export default function Toolbar({
+  onUndo,
+  onRedo,
+  onZoom,
+  currentZoom = 'month',
+  canUndo = true,
+  canRedo = true,
+}: ToolbarProps) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'start', padding: '10px 10px 20px', gap: '10px' }}>
+    <div className="toolbar">
       <ButtonGroup>
-        <Button onClick={() => onUndo?.()}>
+        <Button aria-label="Undo" title="Undo" disabled={!canUndo} onClick={() => onUndo?.()}>
           <UndoIcon />
         </Button>
-        <Button onClick={() => onRedo?.()}>
+        <Button aria-label="Redo" title="Redo" disabled={!canRedo} onClick={() => onRedo?.()}>
           <RedoIcon />
         </Button>
       </ButtonGroup>
